@@ -15,6 +15,7 @@ namespace LibraryProject.Data
         {
         }
         public DbSet<Book> Books { get; set; }
+        
       
     }
 }

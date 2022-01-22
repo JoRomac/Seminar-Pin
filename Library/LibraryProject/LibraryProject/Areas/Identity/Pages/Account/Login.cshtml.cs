@@ -86,8 +86,8 @@ namespace LibraryProject.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
-                    //return LocalRedirect(returnUrl);
-                    return RedirectToAction("Create", "BookController1", new { Controller = "BookController1"});
+                    return LocalRedirect(returnUrl);
+                    //return RedirectToAction("Create", "BookController1", new { Controller = "BookController1"});
                 }
                 if (result.RequiresTwoFactor)
                 {

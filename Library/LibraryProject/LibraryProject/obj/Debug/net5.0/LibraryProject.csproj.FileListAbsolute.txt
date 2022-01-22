@@ -165,4 +165,6 @@ C:\Users\Dell\Desktop\Vsite\5 semestar\PIN\SeminarPin\Library\LibraryProject\Lib
 C:\Users\Dell\Desktop\Vsite\5 semestar\PIN\SeminarPin\Library\LibraryProject\LibraryProject\obj\Debug\net5.0\Razor\Views\BookController1\Index.cshtml.g.cs
 C:\Users\Dell\Desktop\Vsite\5 semestar\PIN\SeminarPin\Library\LibraryProject\LibraryProject\obj\Debug\net5.0\Razor\Views\BookController1\Create.cshtml.g.cs
 C:\Users\Dell\Desktop\Vsite\5 semestar\PIN\SeminarPin\Library\LibraryProject\LibraryProject\obj\Debug\net5.0\Razor\Views\BookController1\Delete.cshtml.g.cs
-C:\Users\Dell\Desktop\Vsite\5 semestar\PIN\SeminarPin\Library\LibraryProject\LibraryProject\obj\Debug\net5.0\Razor\Views\BookPurchase\Index.cshtml.g.cs
+C:\Users\Dell\Desktop\Vsite\5 semestar\PIN\SeminarPin\Library\LibraryProject\LibraryProject\obj\Debug\net5.0\Razor\Views\BookController1\Update.cshtml.g.cs
+C:\Users\Dell\Desktop\Vsite\5 semestar\PIN\SeminarPin\Library\LibraryProject\LibraryProject\obj\Debug\net5.0\Razor\Views\BookController1\BookList.cshtml.g.cs
+C:\Users\Dell\Desktop\Vsite\5 semestar\PIN\SeminarPin\Library\LibraryProject\LibraryProject\obj\Debug\net5.0\Razor\Views\Cart\AddToCart.cshtml.g.cs

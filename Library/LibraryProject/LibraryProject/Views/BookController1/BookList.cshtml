@@ -1,0 +1,54 @@
+﻿@model IEnumerable<LibraryProject.Models.Book>
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Books in Store</h2>
+
+        </div>
+        <div class="col-6 text-right">
+            <a asp-controller="BookController1" asp-action="Create" class="btn btn-outline-primary">Add New Book</a>
+        </div>
+
+    </div>
+    <br />
+    @if (Model.Count() > 0)
+    {
+        <table class="table table-bordered table-striped" style="width:100%">
+            <thead>
+                <tr>
+                    <th>
+                        Book Name
+                    </th>
+                    <th>
+                        Author Name
+                    </th>
+                    <th>
+                        Price
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var book in Model)
+                {
+                <tr>
+                    <td width="20%">@book.BookName</td>
+                    <td width="20%">@book.Author</td>
+                    <td width="20%">@book.Price</td>
+                    <td>
+                        <div class="col-6 text-right">
+                            <a asp-controller="Cart" asp-action="AddToCart" asp-route-Id="@book.Id" class="btn btn-outline-primary">Add To Cart</a>
+                        </div>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No Books available</p>
+    }
+
+
+</div>

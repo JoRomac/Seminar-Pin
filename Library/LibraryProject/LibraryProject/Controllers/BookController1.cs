@@ -1,6 +1,8 @@
 ﻿using LibraryProject.Data;
 using LibraryProject.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -17,19 +19,33 @@ namespace LibraryProject.Controllers
         {
             _db = db;
         }
+
+        // [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public IActionResult Index()
         {
             IEnumerable<Book> objList = _db.Books;
             return View(objList);
         }
+        public IActionResult BookList()
+        {
+            IEnumerable<Book> objList = _db.Books;
+            return View(objList);
+        }
+        //for user
+        public IActionResult AllBooks()
+        {
+            IEnumerable<Book> objList = _db.Books;
+            return View(objList);
+        }
         //GET create
-        
+        //[Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             return View();
         }
 
-        //[Authorize(Roles = "Admin")]
+     
         //POST create
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -40,6 +56,28 @@ namespace LibraryProject.Controllers
             return RedirectToAction("Index");
         }
         //[Authorize(Roles = "Admin")]
+        public IActionResult Update(int? id)
+        {
+
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            Book obj = _db.Books.Find(id);
+            return View(obj);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+ 
+        public IActionResult Update(Book obj)
+        {
+            _db.Books.Update(obj);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+
+      
         [HttpGet]
         public IActionResult Delete(int? id)
         {
@@ -51,7 +89,7 @@ namespace LibraryProject.Controllers
             Book obj = _db.Books.Find(id);
             return View(obj);
         }
-        //[Authorize(Roles = "Admin")]
+      
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult DeleteBook(int? id)
@@ -65,5 +103,6 @@ namespace LibraryProject.Controllers
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
+
     }
 }

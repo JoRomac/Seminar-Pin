@@ -3,7 +3,7 @@
 <div class="container p-3">
     <div class="row pt-4">
         <div class="col-6">
-            <h2 class="text-primary">Borrowed Books</h2>
+            <h2 class="text-primary">Books in Store</h2>
 
         </div>
         <div class="col-6 text-right">
@@ -23,18 +23,25 @@
                 <th>
                     Author Name
                 </th>
+                <th>
+                    Price
+                </th>
+                <th>
+                    Edit Books
+                </th>
             </tr>
         </thead>
         <tbody>
             @foreach (var book in Model)
             {
             <tr>
-                <td width="30%">@book.BookName</td>
-                <td width="30%">@book.Author</td>
+                <td width="20%">@book.BookName</td>
+                <td width="20%">@book.Author</td>
+                <td width="20%">@book.Price</td>
                 <td>
-                    <div class="col-6 text-right">
+                    <div class="col-6 text-left">
                         <a asp-controller="BookController1" asp-action="Update" asp-route-Id="@book.Id" class="btn btn-outline-primary">Update</a>
-                    
+
                         <a asp-controller="BookController1" asp-action="Delete" asp-route-Id="@book.Id" class="btn btn-outline-danger">Delete</a>
                     </div>
                 </td>

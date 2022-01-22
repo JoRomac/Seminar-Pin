@@ -20,9 +20,10 @@ namespace LibraryProject.Models
         [DisplayName("Author Name")]
         public string Author { get; set; }
 
-        /*[Required(ErrorMessage = "Please Enter the price")]
+        [Required(ErrorMessage = "Please Enter the price")]
         [DisplayName("Price")]
-        public string Price { get; set; }*/
-        
+        public decimal Price { get; set; }
+
+        public string Slug => BookName == null ? "" : BookName.Replace(' ', '-');
     }
 }

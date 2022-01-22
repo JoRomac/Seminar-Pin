@@ -1,0 +1,15 @@
+﻿@model LibraryProject.Models.Book
+
+
+<h2>Books in your cart</h2>
+  
+<p>@Model.BookName - @Model.Author</p>
+<p></p>
+<br />
+<td>
+    <div class="col-6 text-right">
+        <a asp-controller="BookController1" asp-action="BookList" class="btn btn-outline-primary">Add another Book</a>
+        <a asp-controller="BookController1" asp-action="BookList" class="btn btn-outline-primary">Proccede to payment</a>
+    </div>
+</td>
+
