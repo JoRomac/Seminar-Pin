@@ -21,7 +21,7 @@ namespace LibraryProject.Controllers
         }
 
         // [Authorize(Roles = "Admin")]
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "ADMIN")]
         public IActionResult Index()
         {
             IEnumerable<Book> objList = _db.Books;
